@@ -1,0 +1,40 @@
+.nav-bar{
+    font-family: 'Poppins', sans-serif;
+}
+.login-btn  a{
+    color: white;
+    padding: 3px;
+    text-align: center;
+}
+
+.nav-bar img{
+    margin-top: 10px;
+    width: 127.45px;
+    height: 48px;
+}
+
+ nav img{ 
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+nav ul li{
+    display: inline-block;
+}
+
+.nav-link{
+    margin-top: 20px;
+}
+
+
+.nav-link a{
+    text-decoration: none;
+    padding: 10px;
+    margin-right: 16px;
+}  
+
+.logIn{
+    padding: 10px 20px;
+    background-color: #F63E7B;
+    color: white;
+}

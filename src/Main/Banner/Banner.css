@@ -1,0 +1,22 @@
+.header-banner{
+    display: flex;
+    margin-top: 40px;background: #FFF8F5;
+}
+.half-width{
+    margin-top: 50px;
+}
+
+.half-width h2{
+    font-weight: 700;
+}
+
+.half-image img{
+    width: 484px;
+    height: 478px;
+}
+
+.btn-appoinment{
+    background: #F73E7B;
+    color: white;
+    padding: 8px;
+}

@@ -1,0 +1,56 @@
+.all-service{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin-bottom: 20px;
+ 
+}
+.single-service img{
+width: 100px;
+text-align: center;
+margin-top: 8px;
+margin-bottom: 10px;
+
+}
+
+.single-service{
+    margin-top: 40px;
+    text-align: center;
+}
+.single-service:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.service-title{
+    text-align: center;
+    
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.single-word{
+    color: #F63E7B;
+
+}
+
+.single-service a{
+    text-decoration: none;
+    color: black;
+}
+
+.explore-btn{
+  margin-bottom: 60px;
+    background-color: #F63E7B;
+    color: white;
+    margin-left: 480px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.book-button{
+    background-color: #07a348;
+    color: white;
+    padding: 3px;
+    margin-bottom: 10px;
+}
