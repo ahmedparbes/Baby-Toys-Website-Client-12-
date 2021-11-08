@@ -16,6 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import './DashBoardHome.css'
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -78,7 +79,10 @@ function DashBoardHome(props) {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div">
-                        Responsive drawer
+                        Dashboard
+                    </Typography>
+                    <Typography className="link-nav" variant="h6" noWrap component="div">
+                        <Link to="/">Home</Link>
                     </Typography>
                 </Toolbar>
             </AppBar>
