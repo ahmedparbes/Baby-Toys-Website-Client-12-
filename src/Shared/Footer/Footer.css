@@ -3,7 +3,7 @@
     color: white;
     display: flex;
     justify-content: space-evenly;
-    background-color:#F63E7B;
+    background-color:#000000;
     padding: 50px;
     font-size: 16px;
 }
@@ -11,7 +11,7 @@
 .foooter-info{
   color: white;
 text-align: center;
-background-color:#F63E7B;
+background-color:#000000;
 }
 
 .foooter-info a{

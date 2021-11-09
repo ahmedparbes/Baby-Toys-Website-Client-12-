@@ -6,10 +6,11 @@
  
 }
 .single-service img{
-width: 100px;
+width: 100%;
 text-align: center;
 margin-top: 8px;
 margin-bottom: 10px;
+background-color: rgb(134, 135, 136);
 
 }
 

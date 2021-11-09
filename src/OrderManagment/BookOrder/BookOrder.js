@@ -10,7 +10,7 @@ const BookOrder = () => {
     const { id } = useParams();
     const { user } = useAuth();
 
-    const [order, setOrder] = useState([]);
+    const [order, setOrder] = useState({});
 
     useEffect(() => {
         const url = `http://localhost:5000/services/${id}`
@@ -59,8 +59,6 @@ const BookOrder = () => {
             <div className="font book-order">
                 <h2 className="text-primary order-title">Fill this form to procced.</h2>
                 <form onSubmit={handlehtmlForm}>
-                    <img className="image-form" src={order.img} alt="" />
-
                     <legend className="legend-text">Your Name</legend>
                     <input ref={nameRef} type="text" required placeholder="Full name" />
                     <legend className="legend-text">User Email</legend>

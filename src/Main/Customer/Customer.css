@@ -1,16 +1,24 @@
 .half-info{
-    margin-left: 30px;
-    margin-top: 50px;
-}
-
-.service-image img{
     margin-top: 20px;
-    margin-bottom: 20px;
-    width: 580px;
-    height: 381;
+    background-color: brown;
+    color: white;
+    height: 370px;
+}
+.half-info h2 , p{
+    margin-left: 20px;
+}
+.half-info h2{
+    margin-top: 7px;
+}
+.service-image img{
+    margin-top: 48px;
+    width: 540px;
+    height: 375px;
+    background-color: brown;
 }
 
 .banner{
+    display: flex;
     width: 100%;
-    margin-bottom: 120px;
+    margin-bottom: 40px;
 }

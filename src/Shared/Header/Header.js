@@ -13,13 +13,12 @@ const Header = () => {
         <>
             <Navbar collapseOnSelect expand="lg" className="nav-bar">
                 <Container>
-                    <Link to="/"><img className="logo" src="https://i.ibb.co/VpFMJ41/Group-33092.png" alt="" /></Link>
+                    <Link to="/"><img className="logo" src="https://i.ibb.co/R7hXjwN/logo-new.png" alt="" /></Link>
                     <Navbar.Toggle />
                     <Navbar.Collapse className="justify-content-end">
                         <Nav className="px-7 nav-link">
                             <Link to="/">Home</Link>
-                            <Link to="/team">Our Team</Link>
-                            <Link to="/portfolio">Our Portfolio</Link>
+                            <Link to="/team">Shop</Link>
                             <Link to="/contact">Contact</Link>
                             <Link to="/dashboard">DashBoard</Link>
                             {

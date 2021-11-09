@@ -1,0 +1,12 @@
+.buy-page{
+    display: flex;
+    margin-top: 60px;
+}
+
+.buy-half-page{
+    margin-top: 50px;
+}
+.buy-half-page h4{
+    margin-top: 30px;
+}
+

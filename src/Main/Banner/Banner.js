@@ -8,14 +8,15 @@ const Banner = () => {
         <Container>
             <div className="header-banner font">
                 <div className="half-width">
-                    <h2>BEAUTY SALON FOR EVERY WOMEN</h2>
+                    <h2>Buy Toys for Every Kids.</h2>
                     <br />
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores tenetur unde suscipit rerum labore culpa cumque exercitationem quam odit architecto.</p>
+                    <p>This is a colorful and responsive kids’ education  theme. It comes with 9 different homepage layouts that will help you make your website unique.
+                        Creating a page is easy and provides you with the flexibility of customization with a lot of handcrafted elements and shortcodes..</p>
                     <br />
-                    <button className="btn-appoinment">Get an Appointment</button>
+                    <button className="btn-appoinment">Start Now</button>
                 </div>
                 <div className="half-image">
-                    <img src="https://i.ibb.co/85s25vg/beautiful-young-asian-woman-touching-her-clean-face-with-fresh-healthy-skin-isolated-white-wall-beau.png" alt="" />
+
                 </div>
             </div>
         </Container>

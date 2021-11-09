@@ -1,143 +1,48 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import './DashBoardHome.css'
+import React from 'react';
+import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
+import './DashBoardHome.css'
 
-const drawerWidth = 240;
-
-function DashBoardHome(props) {
-    const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
-
-    const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
-    };
-
-    const drawer = (
-        <div>
-            <Toolbar />
-            <Divider />
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-            <Divider />
-            <List>
-                {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-        </div>
-    );
-
-    const container = window !== undefined ? () => window().document.body : undefined;
-
+const DashBoardHome = () => {
+    const { user } = useAuth()
     return (
-        <Box className="dashBoard" sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar
-                position="fixed"
-                sx={{
-                    width: { sm: `calc(100% - ${drawerWidth}px)` },
-                    ml: { sm: `${drawerWidth}px` },
-                }}
-            >
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        Dashboard
-                    </Typography>
-                    <Typography className="link-nav" variant="h6" noWrap component="div">
-                        <Link to="/">Home</Link>
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Box
-                component="nav"
-                sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-                aria-label="mailbox folders"
-            >
-                {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-                <Drawer
-                    container={container}
-                    variant="temporary"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
-                    }}
-                    sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                >
-                    {drawer}
-                </Drawer>
-                <Drawer
-                    variant="permanent"
-                    sx={{
-                        display: { xs: 'none', sm: 'block' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
-                    open
-                >
-                    {drawer}
-                </Drawer>
-            </Box>
-            <Box
-                component="main"
-                sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-            >
-                <Toolbar />
-                <Typography paragraph>
-                    Text
-                </Typography>
+        <Container>
+            <div class="wrapper font">
+                <div class="sidebar">
+                    <ul className="siebar-nav">
+                        {/* <li><Link to="/"><i class="fas fa-home"></i>Home</Link></li> */}
+                        <li><Link to="/add-event"><i class="fas fa-plus"></i> Add Product</Link></li>
+                        <li><Link to="#"><i class="fas fa-user"></i> Your Order</Link></li>
+                        <li><Link to="/rate"><i class="fas fa-star"></i> Rate us</Link></li>
+                        <li><Link to="/pay"><i class="fab fa-paypal"></i> Pay</Link></li>
+                    </ul>
+                </div>
+                <div class="main_content">
+                    <div class="header">Welcome!! <span className="text-primary">{user.displayName}</span>. Have a nice day.</div>
+                    <div className="font admin-panel">
 
-            </Box>
-        </Box>
+                        {
+
+                            // users.map(singleUser => <Container>
+                            //     <div className="user-section">
+                            //         <div className="half-img">
+                            //             <img src={singleUser.img} alt="" />
+                            //         </div>
+                            //         <div className="half-width">
+
+                            //             <h6>{singleUser.description}</h6>
+                            //             <button onClick={() => handleDelete(singleUser._id)} className="cancel-btn">Cancel</button>
+                            //         </div>
+                            //     </div>
+                            // </Container>)
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </Container>
     );
-}
-
-DashBoardHome.propTypes = {
-    /**
-     * Injected by the documentation to work in an iframe.
-     * You won't need it on your project.
-     */
-    window: PropTypes.func,
 };
 
 export default DashBoardHome;

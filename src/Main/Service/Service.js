@@ -14,7 +14,8 @@ const Service = () => {
     }, [])
     return (
         <Container>
-            <h2 className="font service-title">Our Owesome <span className="single-word">Service</span></h2>
+            <p className="font" style={{ textAlign: 'center', marginTop: '40px' }}>SHOP JUNO TOYS & GAMES</p>
+            <h2 className="font service-title">Popular In <span className="single-word">Store</span></h2>
             <div className='all-service font'>
 
                 {
@@ -25,7 +26,6 @@ const Service = () => {
                             <img src={s.img} alt="" />
                             <h4>{s.name}</h4>
                             <h6>{s.price}</h6>
-                            <p>{s.description}</p>
                         </Link>
 
                     </div>)

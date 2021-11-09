@@ -4,18 +4,20 @@ import './Customer.css'
 
 const Customer = () => {
     return (
-        <Container>
-            <div className="font header-banner banner">
-                <div className="half-image service-image">
-                    <img src="https://i.ibb.co/9TMWhtT/engin-akyurt-g-m8-EDc4-X6-Q-unsplash-1-min.png" alt="" />
-                </div>
-                <div className="half-width half-info">
-                    <h2>Let us handle your screen <span className='single-word'> Professionally.</span></h2>
-                    <br />
-                    <p>With well written codes, we build amazing apps for all platforms, mobile and web apps in general ipsum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus commodo ipsum.</p>
-                </div>
+
+        <div className="font  banner">
+            <div className="half-image service-image">
+                <img src="https://i.ibb.co/DDKp9wF/hgg-21-hp-sq.webp" alt="" />
             </div>
-        </Container>
+            <div className="half-width half-info">
+                <h2>Welcome To    <span className='single-word'> Fun Crop!</span></h2>
+                <br />
+                <p>The Internet's Favorite Toy Store!</p>
+                <br />
+                <p>We are the toy specialists. Our mission is to enrich families and provide "A Smarter Way to Play" by inspiring creativity and sparking curiosity. We design and curate world-class toys and games, while providing an extraordinary customer experience. Whether you're shopping for Christmas, Hanukkah, or a special birthday, we have the toys and games that will make a difference in a child's life..</p>
+            </div>
+        </div>
+
     );
 };
 
