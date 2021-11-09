@@ -12,6 +12,7 @@ import DashBoardHome from './DashBoard/DashBoardHome/DashBoardHome';
 import BuyOrder from './OrderManagment/BookOrder/BuyOrder/BuyOrder';
 import Payment from './DashBoard/Payment/Payment';
 import Rating from './DashBoard/Rating/Rating';
+import Service from './Main/Service/Service';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Route path="/" element={<Home />}>
             </Route>
             <Route path="/pay" element={<Payment />}>
+            </Route>
+            <Route path="/shop" element={<Service />}>
             </Route>
             <Route path="/rate" element={<Rating />}>
             </Route>

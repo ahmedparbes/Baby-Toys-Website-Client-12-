@@ -3,7 +3,7 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div>
+        <div className="full-footer">
             <div className="footer-info font">
                 <div>
                     <p>H#000 (0th Floor), <br /> Road #00, <br />
@@ -27,7 +27,7 @@ const Footer = () => {
 
             </div>
             <div className=" font foooter-info">
-                <p>© 2021 Medical Operation LLC. All rights reserved.</p>
+                <p>© 2021 Fun Corp Operation LLC. All rights reserved.</p>
 
                 <p >Created by <a href="fb.ahmedparbes">Ahmed Parbes</a></p>
             </div>

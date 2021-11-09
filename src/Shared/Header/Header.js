@@ -18,7 +18,7 @@ const Header = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav className="px-7 nav-link">
                             <Link to="/">Home</Link>
-                            <Link to="/team">Shop</Link>
+                            <Link to="/shop">Shop</Link>
                             <Link to="/contact">Contact</Link>
                             <Link to="/dashboard">DashBoard</Link>
                             {

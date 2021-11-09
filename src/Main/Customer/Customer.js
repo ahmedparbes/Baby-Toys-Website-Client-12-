@@ -10,7 +10,7 @@ const Customer = () => {
                 <img src="https://i.ibb.co/DDKp9wF/hgg-21-hp-sq.webp" alt="" />
             </div>
             <div className="half-width half-info">
-                <h2>Welcome To    <span className='single-word'> Fun Crop!</span></h2>
+                <h2>Welcome To    <span className='single-word'> Fun Corp!</span></h2>
                 <br />
                 <p>The Internet's Favorite Toy Store!</p>
                 <br />

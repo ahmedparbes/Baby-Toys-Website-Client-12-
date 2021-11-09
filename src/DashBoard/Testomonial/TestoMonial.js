@@ -8,7 +8,7 @@ const TestoMonial = (props) => {
         <Container>
 
             <div className="single-rate">
-                <p>{rate}</p>
+                <q>{rate} </q>
                 <h6>Name: <span style={{ color: 'blue' }}> {name}</span></h6>
             </div>
         </Container>
