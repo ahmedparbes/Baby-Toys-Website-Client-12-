@@ -12,7 +12,9 @@ const Footer = () => {
                                 <div className="col-md-6 ">
                                     <div className="logo-part">
 
-                                        <img src="https://i.ibb.co/R7hXjwN/logo-new.png" alt="" />
+                                        {/* <img src="https://i.ibb.co/R7hXjwN/logo-new.png" alt="" /> */}
+
+
                                         <p>7637 Laurel Dr.King Of Prussia, PA 19406</p>
                                         <p>Use this tool as test data for an automated system or find your next pen</p>
                                     </div>

@@ -59,12 +59,32 @@ background-color: rgb(134, 135, 136);
 @media only screen and (max-width: 688px) {
 
     .all-service{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        grid-gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+       
         margin-bottom: 20px;
      
     }
+
+    .single-service img{
+        width: 80%;
+        text-align: center;
+        margin-top: 8px;
+        margin-bottom: 10px;
+        background-color: rgb(134, 135, 136);
+        
+        }
+        .explore-btn{
+            margin-bottom: 60px;
+              background-color: #F63E7B;
+              color: white;
+              padding: 10px 20px;
+              text-align: center;
+              margin-left: 120px;
+              font-size: 16px;
+          }
  
  
   }
@@ -86,6 +106,15 @@ background-color: rgb(134, 135, 136);
      
  
     }
+    .explore-btn{
+        margin-bottom: 60px;
+          background-color: #F63E7B;
+          color: white;
+          padding: 10px 20px;
+          text-align: center;
+          margin: 0;
+          font-size: 16px;
+      }
  }
  
  

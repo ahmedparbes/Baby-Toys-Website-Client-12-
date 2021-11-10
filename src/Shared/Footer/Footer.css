@@ -81,5 +81,7 @@ height: 100%;
 }
 
 .logo-part img{
+  text-align: center;
   margin-bottom: 10px;
+  width:80px;
 }

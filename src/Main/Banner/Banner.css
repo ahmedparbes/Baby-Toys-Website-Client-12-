@@ -1,6 +1,5 @@
 .header-banner{
     display: flex;
-
     background-color: #ff6a44;
     background-image: url("https://ld-wp73.template-help.com/woocommerce/prod_24608/v2/wp-content/uploads/2019/07/clouds.png");
     background-position: bottom center;
@@ -30,13 +29,13 @@
 }
 
 @media only screen and (max-width: 688px) {
-    .banner{
+    .header-banner{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         width: 100%;
         margin-bottom: 40px;
     }
-    .service-image img{
+    .half-image img{
         /* margin-top: 48px; */
         width: 100%;
         height: 100%
@@ -46,9 +45,16 @@
   }
  
   @media only screen and (min-width:689px) and (max-width: 1200px){
-    .half-image img{
+    .header-banner{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
         width: 100%;
-        height: 100%;
+        margin-bottom: 40px;
+    }
+    .half-image img{
+        /* margin-top: 48px; */
+        width: 100%;
+        height: 100%
     }
     
  }

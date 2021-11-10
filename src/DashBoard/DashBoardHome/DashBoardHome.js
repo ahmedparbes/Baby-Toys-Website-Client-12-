@@ -20,7 +20,7 @@ const DashBoardHome = () => {
                     </ul>
                 </div>
                 <div class="main_content">
-                    <div class="header">Welcome!! <span className="text-primary">{user.displayName}</span>. Have a nice day.</div>
+                    <div class="header">Welcome! <span className="text-primary">{user.displayName}</span>. <br />  Have a nice day.</div>
                     <div className="font admin-panel">
 
                         {
