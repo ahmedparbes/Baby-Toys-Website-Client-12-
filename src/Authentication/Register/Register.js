@@ -1,91 +1,55 @@
+import { Alert, CircularProgress } from '@mui/material';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
 import './Register.css'
-import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 const Register = () => {
+    const [loginData, setLoginData] = useState({});
+    const history = useHistory();
+    const { user, registerUser, loading, error } = useAuth();
 
-    const [email, setEmail] = useState('');
-    const [displayName, setDisplayName] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
-
-
-    const handleEmail = e => {
-        setEmail(e.target.value)
+    const handleOnBlur = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
     }
+    const handleLoginSubmit = e => {
 
-    const handlePassword = e => {
-        setPassword(e.target.value)
+        registerUser(loginData.email, loginData.password, loginData.name, history);
+        e.preventDefault();
     }
-
-    const handleDisplayName = e => {
-        setDisplayName(e.target.value);
-
-    }
-
-    const handleRegistration = e => {
-        e.preventDefault()
-        const auth = getAuth();
-        createUserWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const user = result.user
-                console.log(user);
-                setUserName()
-            })
-
-            .catch((error) => {
-                setError(error.code)
-                setError(error.message)
-
-            });
-
-    }
-
-    const setUserName = () => {
-        const auth = getAuth();
-        updateProfile(auth.currentUser, {
-            displayName: displayName
-        })
-
-            .then(() => {
-                // Profile updated!
-                // ...
-            }).catch((error) => {
-                // An error occurred
-                // ...
-            });
-
-    }
-
-
-
     return (
-
+        // {!loading && <form onSubmit={handleLoginSubmit}>
         <div className="font">
-            <form onSubmit={handleRegistration} >
+            <form onSubmit={handleLoginSubmit} >
                 <div class="container">
-                    <h1 style={{ color: 'blue', textAlign: 'center', marginBottom: '40px' }}>Register</h1>
+                    <h1>Register</h1>
                     <p>Please fill in this form to create an account.</p>
                     <hr />
 
                     <label htmlFor="text"><b>Your Name</b></label>
-                    <input onBlur={handleDisplayName} type="text" placeholder="Enter Name" name="name" id="name" required />
+                    <input onBlur={handleOnBlur} type="text" placeholder="Enter Name" name="name" id="name" required />
 
                     <label htmlFor="email"><b>Email</b></label>
-                    <input onBlur={handleEmail} type="text" placeholder="Enter Email" name="email" id="email" required />
+                    <input onBlur={handleOnBlur} type="text" placeholder="Enter Email" name="email" id="email" required />
 
                     <label htmlFor="psw"><b>Password</b></label>
-                    <input onBlur={handlePassword} type="password" placeholder="Enter Password" name="psw" id="psw" required />
+                    <input onBlur={handleOnBlur} type="password" placeholder="Enter Password" name="password" id="psw" required />
                     <hr />
                     <div>
-                        <p>By creating an account you agree to our <Link to="/">Terms & Privacy</Link>.</p>
-                        {error}
+                        <p>By creating an account you agree to our <Link style={{ textDecoration: 'none' }} to="/">Terms & Privacy</Link>.</p>
+                        <div className="container signin">
+                            {loading && <CircularProgress />}
+                            {user?.email && <Alert severity="success">User Created successfully!</Alert>}
+                            {error && <Alert severity="error">{error}</Alert>}
+                        </div>
                         <button type="submit" className="registerbtn">Register</button>
                     </div>
-                    <div className="container signin">
-                        <p>Already have an account? < Link to="/login">Login now</Link>.</p>
-                    </div>
+                    <p>Already have an account? < Link style={{ textDecoration: 'none' }} to="/login">Login now</Link>.</p>
+
                 </div>
             </form>
         </div>

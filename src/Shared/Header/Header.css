@@ -3,7 +3,6 @@
 }
 .login-btn  a{
     color: white;
-    padding: 3px;
     text-align: center;
 }
 
@@ -33,14 +32,12 @@ nav ul li{
     margin-right: 6px;
 }  
 
-.logIn{
-    background-color: #F63E7B;
-    color: white;
-    margin-left: 20px;
+
+.user-name{
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
-.register-button{
-    background-color: blue;
+.login-btn{
     color: white;
-    margin-right: 20px;
 }

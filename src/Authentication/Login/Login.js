@@ -1,88 +1,70 @@
 import React, { useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
 import initializeAuthentication from '../../Firebase/Firebase.init';
+import Button from '@restart/ui/esm/Button';
+import { Alert, CircularProgress } from '@mui/material';
 
 initializeAuthentication()
 
 const Login = () => {
+    const [loginData, setLoginData] = useState({});
+    const { user, loginUser, signInWithGoogle, loading, error } = useAuth();
 
-    const { handleGoogleSignIn, user, logOut } = useAuth()
+    const location = useLocation();
+    const history = useHistory();
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [users, setUsers] = useState({});
-    const [error, setError] = useState('');
-    const [isLoading, setIsLoading] = useState(true);
+    const redirect_uri = location.state?.from || '/';
 
-
-    const handleEmail = e => {
-        setEmail(e.target.value)
+    const handleOnChange = e => {
+        const field = e.target.name;
+        const value = e.target.value;
+        const newLoginData = { ...loginData };
+        newLoginData[field] = value;
+        setLoginData(newLoginData);
     }
-    const handlePassword = e => {
-        setPassword(e.target.value)
+    const handleLoginSubmit = e => {
+        loginUser(loginData.email, loginData.password, location, history);
+        e.preventDefault();
     }
-    const handleLogin = e => {
-        setIsLoading(true)
-        e.preventDefault()
-        const auth = getAuth();
-        signInWithEmailAndPassword(auth, email, password)
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
             .then(result => {
-                setUsers(result.user);
-                console.log(user)
+                history.push(redirect_uri)
+
             })
-
-            .finally(() => setIsLoading(false))
-
-            .catch((error) => {
-                setError(error.code)
-                setError(error.message)
-
-            });
-
     }
 
-    return ({ isLoading },
+    return (
         <Container>
             <div className="font">
-                <form onSubmit={handleLogin}>
-                    <div className="container">
-                        <h1>Login</h1>
-                        <p>Please fill in this form to Login a account.</p>
-                        <hr />
+                <form onSubmit={handleLoginSubmit}>
+                    <label htmlFor="email"><b>Email</b></label>
+                    <input onBlur={handleOnChange} type="text" placeholder="Enter Email" name="email" id="email" required />
 
-                        <label htmlFor="email"><b>Email</b></label>
-                        <input onBlur={handleEmail} type="text" placeholder="Enter Email" name="email" id="email" required />
+                    <label htmlFor="psw"><b>Password</b></label>
+                    <input onBlur={handleOnChange} type="password" placeholder="Enter Password" name="password" id="psw" required />
+                    {loading && <CircularProgress />}
+                    {user?.email && <Alert severity="success">Login successfully!</Alert>}
+                    {error && <Alert severity="error">{error}</Alert>}
 
-                        <label htmlFor="psw"><b>Password</b></label>
-                        <input onBlur={handlePassword} type="password" placeholder="Enter Password" name="psw" id="psw" required />
-                        <hr />
-                        {error}
-                        <div>
-                            <p>By creating an account you agree to our <Link to="/">Terms & Privacy</Link>.</p>
-                            <button type="submit" className="registerbtn">Login</button>
-                        </div>
+                    <button type="submit" className="registerbtn">Login</button>
 
-                        <div className="container signin">
-                            <p>Dont have an account? < Link to="/register">Register now</Link>.</p>
-                        </div>
-                    </div>
+                    <Link style={{ textDecoration: 'none' }} to="/register">
+                        New User? Please Register
+                    </Link>
+
                 </form>
-
-                <div style={{ textAlign: 'center' }}>
-                    <h4>Or Login Using Social Link</h4>
-                    <hr />
-
-                    <div className="font">
-                        <button className="btn-primary font" onClick={handleGoogleSignIn} ><i class="fab fa-google">    <span className="font mx-3">Log in Using Google</span></i></button>
-                    </div>
-
+                <h6 style={{ textAlign: 'center', color: 'blue', marginTop: '20px' }}>Or Sign In using</h6>
+                <hr />
+                <div style={{ textAlign: 'center', alignItems: 'center' }} >
+                    <button className="btn-primary font" onClick={handleGoogleSignIn} ><i className="fab fa-google">    <span className="font mx-3">Log in Using Google</span></i></button>
                 </div>
-            </div>
-        </Container>
+            </div >
+        </Container >
     );
 };
 
-export default Login;
+export default Login

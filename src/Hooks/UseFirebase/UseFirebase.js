@@ -1,4 +1,4 @@
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useEffect, useState } from "react";
 import initializeAuthentication from '../../Firebase/Firebase.init';
 
@@ -13,45 +13,76 @@ const useFirebase = () => {
 
 
 
-    const handleGoogleSignIn = () => {
+    const signInWithGoogle = () => {
 
         const provider = new GoogleAuthProvider();
-        signInWithPopup(auth, provider)
+        return signInWithPopup(auth, provider)
             .finally(() => setLoading(false))
-            .then((result) => {
-                const user = result.user;
-                setUser(user)
-                // ...
-            }).catch((error) => {
+
+            .catch((error) => {
                 setError(error.message);
 
             });
 
     }
 
-    const handleRegisterUser = (email, password, name) => {
+    // const handleRegisterUser = (email, password, name) => {
 
-        const auth = getAuth();
+    //     const auth = getAuth();
+    //     createUserWithEmailAndPassword(auth, email, password)
+    //         .then((userCredential) => {
+    //             setUser(userCredential.user)
+    //         })
+    //         .catch((error) => {
+    //             setError(error.message);
+
+    //         });
+    // }
+
+    // const handleLogIn = (email, password) => {
+    //     signInWithEmailAndPassword(auth, email, password)
+    //         .then((userCredential) => {
+    //             setUser(userCredential.user);
+    //         })
+    //         .catch((error) => {
+    //             setError(error.message);
+    //         });
+    // }
+    const registerUser = (email, password, name, history) => {
+        setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                setUser(userCredential.user)
+                setError('');
+                const newUser = { email, displayName: name };
+                setUser(newUser);
+                // send name to firebase after creation
+                updateProfile(auth.currentUser, {
+                    displayName: name
+                }).then(() => {
+                }).catch((error) => {
+                });
+                history.replace('/');
             })
             .catch((error) => {
                 setError(error.message);
-
-            });
+                console.log(error);
+            })
+            .finally(() => setLoading(false));
     }
 
-    const handleLogIn = (email, password) => {
+    const loginUser = (email, password, location, history) => {
+        setLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                setUser(userCredential.user);
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
+                setError('');
             })
             .catch((error) => {
                 setError(error.message);
-            });
+            })
+            .finally(() => setLoading(false));
     }
-
 
 
     const handleLogOut = () => {
@@ -87,12 +118,12 @@ const useFirebase = () => {
 
     return {
         user,
-        handleGoogleSignIn,
+        signInWithGoogle,
         handleLogOut,
         error,
         loading,
-        handleRegisterUser,
-        handleLogIn
+        registerUser,
+        loginUser
 
     }
 

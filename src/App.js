@@ -1,21 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Switch,
+  Route,
+} from 'react-router-dom';
 import Home from './Main/Home/Home';
 import Header from './Shared/Header/Header';
 import Footer from './Shared/Footer/Footer';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
-import BookOrder from './OrderManagment/BookOrder/BookOrder';
 import DashBoardHome from './DashBoard/DashBoardHome/DashBoardHome';
-import BuyOrder from './OrderManagment/BookOrder/BuyOrder/BuyOrder';
 import Payment from './DashBoard/Payment/Payment';
 import Rating from './DashBoard/Rating/Rating';
 import Service from './Main/Service/Service';
 import Register from './Authentication/Register/Register';
 import Login from './Authentication/Login/Login';
 import BookingList from './DashBoard/Book/BookingList/BookingList';
+import AddService from './DashBoard/AddService/AddService';
+import BookOrder from './OrderManagment/BookOrder/BookOrder';
+import BuyOrder from './OrderManagment/BuyOrder/BuyOrder';
+import PrivateRoute from './Private/PrivateRoute';
 
 function App() {
   return (
@@ -23,29 +28,53 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Header></Header>
-          <Routes>
-            <Route path="/" element={<Home />}>
-            </Route>
-            <Route path="/pay" element={<Payment />}>
-            </Route>
-            <Route path="/shop" element={<Service />}>
-            </Route>
-            <Route path="/rate" element={<Rating />}>
-            </Route>
-            <Route path="/register" element={<Register />}>
-            </Route>
-            <Route path="/login" element={<Login />}>
-            </Route>
-            <Route path="/my-orders" element={<BookingList />}>
-            </Route>
-            <Route path="/book/:id" element={<BuyOrder />}>
-            </Route>
-            <Route path="/buy/:id" element={<BookOrder />}>
-            </Route>
-            <Route path="/dashboard" element={<DashBoardHome />}>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
             </Route>
 
-          </Routes>
+            <PrivateRoute path="/pay">
+              <Payment></Payment>
+            </PrivateRoute>
+
+            <Route path="/shop">
+              <Service></Service>
+            </Route>
+
+            <PrivateRoute path="/rate">
+              <Rating></Rating>
+            </PrivateRoute>
+
+            <PrivateRoute path="/add-service">
+              <AddService></AddService>
+            </PrivateRoute>
+
+            <Route path="/register">
+              <Register></Register>
+            </Route>
+
+            <Route path="/login">
+              <Login></Login>
+            </Route>
+
+            <PrivateRoute path="/my-orders">
+              <BookingList></BookingList>
+            </PrivateRoute>
+
+            <PrivateRoute path="/book/:id">
+              <BuyOrder></BuyOrder>
+            </PrivateRoute>
+
+            <PrivateRoute path="/buy/:id" >
+              <BookOrder></BookOrder>
+            </PrivateRoute>
+
+            <PrivateRoute path="/dashboard" >
+              <DashBoardHome></DashBoardHome>
+            </PrivateRoute>
+
+
+          </Switch>
         </BrowserRouter>
         <Footer></Footer>
 

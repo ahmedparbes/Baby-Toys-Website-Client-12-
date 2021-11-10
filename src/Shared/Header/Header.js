@@ -20,19 +20,26 @@ const Header = () => {
                             <Link to="/">Home</Link>
                             <Link to="/shop">Shop</Link>
                             <Link to="/contact">Contact</Link>
-                            <Link to="/dashboard">DashBoard</Link>
                             {
-                                !user.email && <Link to="/login"> <Button className="logIn">Log In</Button></Link>
-
+                                !user.email && <div className="py-1 my-1">
+                                    <button className="btn-danger login-btn ">
+                                        <Link to="/register"><i className="fas fa-sign-in-alt"><span className="font login-btn"> Register</span></i></Link></button>
+                                </div>
                             }
                             {
-                                !user.email && <Link to='/register'><Button className="register-button">Register</Button></Link>
+                                user.email && <Link to="/dashboard"><i className="fas fa-user-shield"><span className="font">Dashboard</span></i></Link>
                             }
-
-
+                            <br />
                             {
-                                user.email && <Button onClick={handleLogOut} className="logIn">Log Out</Button>
+                                user.email &&
+                                <button style={{ backgroundColor: 'purple', color: 'white', marginRight: '10px' }} className="font" onClick={handleLogOut} ><i className="fa fa-sign-out" aria-hidden="true"><span className="font mx-1"> Logout</span></i></button>
                             }
+
+
+                            {/* {
+                                user.email && <p className="user-name" ><i className=" fas fa-user-tie"><span className="font ">  {user.displayName}</span></i></p>
+                            } */}
+
                         </Nav>
                         <Navbar.Text>
                         </Navbar.Text>

@@ -1,8 +1,7 @@
 .half-info{
-    margin-top: 20px;
+    margin-bottom: 40px;
     background-color: brown;
     color: white;
-    height: 370px;
 }
 .half-info h2 , p{
     margin-left: 20px;
@@ -11,7 +10,7 @@
     margin-top: 7px;
 }
 .service-image img{
-    margin-top: 48px;
+    /* margin-top: 48px; */
     width: 540px;
     height: 375px;
     background-color: brown;
