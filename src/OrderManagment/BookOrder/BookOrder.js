@@ -21,6 +21,7 @@ const BookOrder = () => {
 
 
     const nameRef = useRef();
+    const statusRef = useRef()
     const emailRef = useRef();
     const productNameRef = useRef();
     const productDesRef = useRef()
@@ -30,8 +31,9 @@ const BookOrder = () => {
         const email = emailRef.current.value;
         const desRef = productDesRef.current.value;
         const productName = productNameRef.current.value;
+        const sta_tus = statusRef.current.value;
 
-        const newOrder = { name: name, email: email, product: productName, description: desRef }
+        const newOrder = { name: name, email: email, product: productName, description: desRef, status: sta_tus }
 
         fetch('http://localhost:5000/users', {
             method: "POST",
@@ -67,6 +69,8 @@ const BookOrder = () => {
                     <input ref={productNameRef} required type="text" id="lname" name="lastname" placeholder="" value={order.name} />
                     <legend className="legend-text">Description</legend>
                     <input className="description" ref={productDesRef} required type="text" id="lname" name="lastname" placeholder="" value={order.description} />
+                    <legend className="legend-text">Default Status</legend>
+                    <input className="description" ref={statusRef} required type="text" id="lname" name="lastname" placeholder="" value="Pending" />
                     <input type="submit" value="Place Order" />
                 </form>
             </div>

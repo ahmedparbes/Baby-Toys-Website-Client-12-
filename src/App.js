@@ -13,6 +13,9 @@ import BuyOrder from './OrderManagment/BookOrder/BuyOrder/BuyOrder';
 import Payment from './DashBoard/Payment/Payment';
 import Rating from './DashBoard/Rating/Rating';
 import Service from './Main/Service/Service';
+import Register from './Authentication/Register/Register';
+import Login from './Authentication/Login/Login';
+import BookingList from './DashBoard/Book/BookingList/BookingList';
 
 function App() {
   return (
@@ -28,6 +31,12 @@ function App() {
             <Route path="/shop" element={<Service />}>
             </Route>
             <Route path="/rate" element={<Rating />}>
+            </Route>
+            <Route path="/register" element={<Register />}>
+            </Route>
+            <Route path="/login" element={<Login />}>
+            </Route>
+            <Route path="/my-orders" element={<BookingList />}>
             </Route>
             <Route path="/book/:id" element={<BuyOrder />}>
             </Route>

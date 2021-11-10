@@ -7,7 +7,7 @@ import './Header.css'
 
 const Header = () => {
 
-    const { user, handleLogOut, handleGoogleSignIn } = useAuth()
+    const { user, handleLogOut, } = useAuth()
 
     return (
         <>
@@ -22,9 +22,13 @@ const Header = () => {
                             <Link to="/contact">Contact</Link>
                             <Link to="/dashboard">DashBoard</Link>
                             {
-                                !user.email && <Button onClick={handleGoogleSignIn} className="logIn">Log In</Button>
+                                !user.email && <Link to="/login"> <Button className="logIn">Log In</Button></Link>
 
                             }
+                            {
+                                !user.email && <Link to='/register'><Button className="register-button">Register</Button></Link>
+                            }
+
 
                             {
                                 user.email && <Button onClick={handleLogOut} className="logIn">Log Out</Button>
