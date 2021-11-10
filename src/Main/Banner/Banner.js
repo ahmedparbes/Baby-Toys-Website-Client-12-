@@ -11,7 +11,7 @@ const Banner = () => {
             <div className="header-banner font">
                 <div className="half-width">
                     <Container>
-                        <h1 style={{ marginLeft: '40px' }}>20%Off </h1>
+                        <h1 style={{ marginLeft: '40px' }}>WELCOME TO CHILD HEAVEN </h1>
                         <br />
                         <p>Bring happiness to your children with our help.  Purchase interesting toys using a special discount..</p>
                         <br />
