@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useAuth from "../../../Context/AuthProvider/useAuth/useAuth";
 import './BookingList.css'
 import { Container } from "react-bootstrap";
+import Button from 'react-bootstrap/Button'
 
 const BookingList = () => {
 
@@ -56,8 +58,8 @@ const BookingList = () => {
                                 {/* <td>{user.name}</td> */}
                                 <td>{o.email}</td>
                                 <td>{o.product}</td>
-                                <td>{o.status}</td>
                                 <td><button onClick={() => cancelOrder(o._id)}><i className="fas fa-trash-alt"> cancel order</i></button></td>
+                                <td> <Button variant="danger"><Link style={{ textDecoration: 'none', color: "white" }} to={`update/${o._id}`}>{o.status}</Link></Button></td>
                             </tr>
 
                         </table>

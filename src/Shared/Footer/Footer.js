@@ -68,7 +68,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <p>Copyright © 2021 by Tralive</p>
+                <p style={{ textAlign: 'center' }}>Copyright © 2021 by Fun corp</p>
             </footer>
         </div>
     );

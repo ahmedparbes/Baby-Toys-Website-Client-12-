@@ -21,6 +21,7 @@ import AddService from './DashBoard/AddService/AddService';
 import BookOrder from './OrderManagment/BookOrder/BookOrder';
 import BuyOrder from './OrderManagment/BuyOrder/BuyOrder';
 import PrivateRoute from './Private/PrivateRoute';
+import OrderStatusUpdate from './OrderManagment/OrderStatusUpdate/OrderStatusUpdate';
 
 function App() {
   return (
@@ -67,6 +68,9 @@ function App() {
 
             <PrivateRoute path="/buy/:id" >
               <BookOrder></BookOrder>
+            </PrivateRoute>
+            <PrivateRoute path="/update/:id" >
+              <OrderStatusUpdate></OrderStatusUpdate>
             </PrivateRoute>
 
             <PrivateRoute path="/dashboard" >
