@@ -61,9 +61,9 @@ function App() {
               <BookingList></BookingList>
             </PrivateRoute>
 
-            <PrivateRoute path="/book/:id">
+            <Route path="/book/:id">
               <BuyOrder></BuyOrder>
-            </PrivateRoute>
+            </Route>
 
             <PrivateRoute path="/buy/:id" >
               <BookOrder></BookOrder>
