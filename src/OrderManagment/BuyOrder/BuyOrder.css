@@ -12,3 +12,37 @@
 .buy-half-page h4{
     margin-top: 30px;
 }
+
+@media only screen and (max-width: 688px) {
+    .buy-page{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    .buy-half-image img{
+        /* margin-top: 48px; */
+        width: 100%;
+        height: 100%
+    }
+ 
+ 
+  }
+ 
+  @media only screen and (min-width:689px) and (max-width: 1200px){
+    .buy-page{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
+    .buy-half-image img{
+        /* margin-top: 48px; */
+        width: 100%;
+        height: 100%
+    }
+    
+ }
+ 
+ 
+ 

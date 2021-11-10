@@ -57,7 +57,7 @@ const Login = () => {
                     </Link>
 
                 </form>
-                <h6 style={{ textAlign: 'center', color: 'blue', marginTop: '20px' }}>Or Sign In using</h6>
+                <h6 style={{ textAlign: 'center', color: 'blue', marginTop: '20px' }}>OR SIGN IN USING GOOGLE</h6>
                 <hr />
                 <div style={{ textAlign: 'center', alignItems: 'center' }} >
                     <button className="btn-primary font" onClick={handleGoogleSignIn} ><i className="fab fa-google">    <span className="font mx-3">Log in Using Google</span></i></button>
