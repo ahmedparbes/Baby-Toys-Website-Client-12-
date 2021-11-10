@@ -1,19 +1,19 @@
 .nav-bar{
     font-family: 'Poppins', sans-serif;
+   
+    color: rgb(0, 0, 0);
 }
 .login-btn  a{
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
 .nav-bar img{
-    margin-top: 10px;
     width: 127.45px;
     height: 48px;
 }
 
  nav img{ 
-    margin-top: 10px;
     margin-left: 20px;
 }
 
@@ -22,7 +22,6 @@ nav ul li{
 }
 
 .nav-link{
-    margin-top: 20px;
 }
 
 
@@ -30,6 +29,7 @@ nav ul li{
     text-decoration: none;
     padding: 10px;
     margin-right: 6px;
+    color: rgb(0, 0, 0);
 }  
 
 
@@ -41,3 +41,9 @@ nav ul li{
 .login-btn{
     color: white;
 }
+ 
+ 
+ 
+ 
+ 
+ 

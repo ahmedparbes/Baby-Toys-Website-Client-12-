@@ -1,46 +1,85 @@
-.full-footer{
-  background-image: url(https://i.ibb.co/m45rxKH/hero-slider-item-01.jpg);
+.bg-grey {
+  background: #000000;
 }
-.footer-info{
-    margin-top: 60px;
-    color: white;
-    display: flex;
-    justify-content: space-evenly;
+.logo-footer {
+  margin-bottom: 40px;
+}
+footer {
+      color: grey;
+}
+footer h6 {
+margin-bottom: 40px;
+position: relative;
+}
+footer h6:after {
+position: absolute;
+content: "";
+background: grey;
+width: 12%;
+height: 1px;
+left: 0;
+bottom: -20px;
+}
+.btn-footer {
+           color: grey;
+        
+          text-decoration: none;
+          border: 1px solid;
+          border-radius: 43px;
+          font-size: 19px;
+          padding: 7px 30px;
+          line-height: 47px;
+}
+.btn-footer:hover {
+          
+          text-decoration: none;
+         
+}
+.form-footer input[type="text"] {
+  border: none;
+border-radius: 16px 0 0 16px;
+outline: none;
+padding-left: 10px;
 
- 
-    padding: 50px;
-    font-size: 16px;
+}
+::placeholder {
+font-size: 19px;
+padding-left: 10px;
+
+}
+.form-footer input[type="button"] {
+border: none;
+background:#232323;
+  margin-left: -5px;
+color: #fff;
+outline: none;
+border-radius: 0 16px 16px 0;
+padding: 2px 12px;
+}
+.social .fa {
+color: grey;
+font-size: 22px;
+padding: 10px 15px;
+background: #3c3c3c;
+}
+footer ul li {
+list-style: none;
+display: block;
+}
+footer ul  {
+padding-left: 0;
+}
+footer ul  li a{
+text-decoration: none;
+color: grey;
+text-decoration:none;
 }
 
-.foooter-info{
-  color: white;
-text-align: center;
+.logo-part {
+border-right: 1px solid grey;
+height: 100%;
 }
 
-.foooter-info a{
-  text-decoration: none;
-  color: rgb(248, 248, 248);
+.logo-part img{
+  margin-bottom: 10px;
 }
-
-@media only screen and (max-width: 689px) {
-    .footer-info{
-      display: grid;
-      grid-template-columns: repeat(1, 1fr);
-    }
-
-    div{
-        margin-top: 20px;
-    }
-  }
-
-  @media only screen and (min-width:689px) and (max-width: 1200px){
-    .footer-info{
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    div{
-        margin-top: 20px;
-    }
-       
-      }

@@ -3,36 +3,74 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div className="full-footer">
-            <div className="footer-info font">
-                <div>
-                    <p>H#000 (0th Floor), <br /> Road #00, <br />
-                        New DOHS, Mohakhali, Dhaka, Bangladesh
-                    </p>
+        <div className="footer-container font">
+            <footer className="container-fluid bg-grey py-5">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-6">
+                            <div className="row">
+                                <div className="col-md-6 ">
+                                    <div className="logo-part">
 
-                </div>
-                <div>
-                    <h4>ABOUT US</h4>
-                    <p>Healthcare Success is a full-service <br /> marketing and advertising agency .
-                    </p>
-                </div>
-                <div>
-                    <h4> +564 7885 <span className="text-green">3222</span> </h4>
-                    <p>Email: youremail@gmail.com</p>
-                    <h4 >Subscribe to our newsletter</h4>
-                    <input type="email" name="email" id="" placeholder="Enter Email" />
-                    <br />
-                    <button className="btn-primary mx-3 my-3 ">Subscribe</button>
-                </div>
+                                        <img src="https://i.ibb.co/R7hXjwN/logo-new.png" alt="" />
+                                        <p>7637 Laurel Dr.King Of Prussia, PA 19406</p>
+                                        <p>Use this tool as test data for an automated system or find your next pen</p>
+                                    </div>
+                                </div>
+                                <div className="col-md-6 px-4">
+                                    <h6> About Company</h6>
+                                    <p>But horizontal lines can only be a full pixel high.</p>
+                                    <a href="#" className="btn-footer"> More Info </a><br />
+                                    <a href="#" className="btn-footer"> Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="row">
+                                <div className="col-md-6 px-4">
+                                    <h6> Help us</h6>
+                                    <div className="row ">
+                                        <div className="col-md-6">
+                                            <ul>
+                                                <li> <a href="#"> Home</a> </li>
+                                                <li> <a href="#"> About</a> </li>
+                                                <li> <a href="#"> Service</a> </li>
+                                                <li> <a href="#"> Team</a> </li>
+                                                <li> <a href="#"> Help</a> </li>
+                                                <li> <a href="#"> Contact</a> </li>
+                                            </ul>
+                                        </div>
+                                        <div className="col-md-6 px-4">
+                                            <ul>
+                                                <li> <a href="#"> Cab Faciliy</a> </li>
+                                                <li> <a href="#"> Fax</a> </li>
+                                                <li> <a href="#"> Terms</a> </li>
+                                                <li> <a href="#"> Policy</a> </li>
+                                                <li> <a href="#"> Refunds</a> </li>
+                                                <li> <a href="#"> Paypal</a> </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-md-6 ">
+                                    <h6> Newsletter</h6>
+                                    <div className="social">
+                                        <a href="#"><i className="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                                    </div>
+                                    <form className="form-footer my-3">
+                                        <input type="text" placeholder="search here...." name="search" />
+                                        <input type="button" value="Go" />
+                                    </form>
 
-            </div>
-            <div className=" font foooter-info">
-                <p>© 2021 Fun Corp Operation LLC. All rights reserved.</p>
-
-                <p >Created by <a href="fb.ahmedparbes">Ahmed Parbes</a></p>
-            </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Copyright © 2021 by Tralive</p>
+            </footer>
         </div>
-
     );
 };
 

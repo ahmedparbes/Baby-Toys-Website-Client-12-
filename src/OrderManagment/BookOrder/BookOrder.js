@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
 import './BookOrder.css';
 
@@ -9,6 +9,7 @@ const BookOrder = () => {
 
     const { id } = useParams();
     const { user } = useAuth();
+    const history = useHistory()
 
     const [order, setOrder] = useState({});
 
@@ -47,6 +48,7 @@ const BookOrder = () => {
                 if (data.insertedId) {
                     alert('We recived your order.');
                     e.target.reset()
+                    history.push('/my-orders')
                 }
 
 

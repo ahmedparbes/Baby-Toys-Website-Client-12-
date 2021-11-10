@@ -12,7 +12,7 @@ const Review = () => {
     }, [])
     return (
         <Container>
-            <h2 className="font" style={{ textAlign: 'center' }}>What our customer says before</h2>
+            <h2 className="font text-danger" style={{ textAlign: 'center', marginTop: '40px' }}>What our customer says</h2>
             <div className="font">
 
                 <div className="review-section">

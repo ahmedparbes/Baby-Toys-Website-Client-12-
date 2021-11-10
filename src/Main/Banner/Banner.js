@@ -1,25 +1,29 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import BannerUnder from '../Banner-under/BannerUnder';
 import './Banner.css'
 
 
 const Banner = () => {
     return (
-        <Container>
+
+        <div>
             <div className="header-banner font">
                 <div className="half-width">
-                    <h2>Buy Toys for Every Kids.</h2>
-                    <br />
-                    <p>This is a colorful and responsive kids’ education  theme. It comes with 9 different homepage layouts that will help you make your website unique.
-                        Creating a page is easy and provides you with the flexibility of customization with a lot of handcrafted elements and shortcodes..</p>
-                    <br />
-                    <button className="btn-appoinment">Start Now</button>
+                    <Container>
+                        <h1 style={{ marginLeft: '40px' }}>20%Off </h1>
+                        <br />
+                        <p>Bring happiness to your children with our help.  Purchase interesting toys using a special discount..</p>
+                        <br />
+                        <button className="btn-appoinment">Shop Now</button>
+                    </Container>
                 </div>
                 <div className="half-image">
-
+                    <img src="https://i.ibb.co/dLHnxqj/boy.png" alt="" />
                 </div>
             </div>
-        </Container>
+            <BannerUnder></BannerUnder>
+        </div>
     );
 };
 

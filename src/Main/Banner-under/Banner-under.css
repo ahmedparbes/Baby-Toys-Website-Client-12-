@@ -1,0 +1,33 @@
+.banner-Under img{
+/* width: 90px;
+width: 232px;
+margin-top: -90px;
+margin-left: 70px;
+max-width: 100%;
+border-radius: 50% 50% 50% 50%;
+box-shadow: 0px 4px 12px 0px rgba(250,87,153,0.1); */
+margin-top: -127px;
+margin-bottom: 0px;
+margin-left: 40px;
+}
+
+.image-one{
+    padding: 34px 34px 34px 34px;
+    background-color: #ff589b;
+    border-radius: 50% 50% 50% 50%;
+    box-shadow: -3px -3px 4px 0px rgba(47,47,47,0.13) inset;
+}
+
+.image-two{
+    padding: 34px 34px 34px 34px;
+    background-color: #7cc92b;
+    border-radius: 50% 50% 50% 50%;
+    box-shadow: -3px -3px 4px 0px rgba(47,47,47,0.13) inset;
+}
+
+.image-three{
+    padding: 34px 34px 34px 34px;
+    background-color: #1d076e;
+    border-radius: 50% 50% 50% 50%;
+    box-shadow: -3px -3px 4px 0px rgba(47,47,47,0.13) inset;
+}

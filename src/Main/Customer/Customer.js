@@ -1,22 +1,34 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button'
+import { ButtonGroup, Card, Container } from 'react-bootstrap';
 import './Customer.css'
 
+
+
 const Customer = () => {
+
+    const service = [
+        { img: 'https://i.ibb.co/DDSKPRg/0001.jpg', age: 'UP TO 1 YEAR' },
+        { img: 'https://i.ibb.co/FwwGFTh/0002.jpg', age: '1 YEAR' },
+        { img: 'https://i.ibb.co/X42h5Rf/0003.jpg', age: '2 YEAR' },
+        { img: 'https://i.ibb.co/5RJptTr/0004.jpg', age: '3-4 YEAR' },
+        { img: 'https://i.ibb.co/p1w69Sz/0005.jpg', age: 'Over 4 YEAR' },
+    ]
+
     return (
 
-        <div className="font  banner">
-            <div className="half-image service-image">
-                <img src="https://i.ibb.co/DDKp9wF/hgg-21-hp-sq.webp" alt="" />
+        <Container>
+            <h2 style={{ fontWeight: '700', textAlign: 'center', marginTop: '20px', marginBottom: '40px' }} className="font text-danger">Selection by Age</h2>
+            <div className="font  all-services">
+                {
+                    service.map(s => <Card className="border-0" style={{ width: '13rem', backgroundColor: '#00000000' }}>
+                        <Card.Img className="card-img" variant="top" src={s.img} />
+                        <Button className="button-grp">{s.age}</Button>{' '}
+                    </Card>)
+                }
+
             </div>
-            <div className="half-info">
-                <h2>Welcome To    <span className='single-word'> Fun Corp!</span></h2>
-                <br />
-                <p>The Internet's Favorite Toy Store!</p>
-                <br />
-                <p>We are the toy specialists. Our mission is to enrich families and provide "A Smarter Way to Play" by inspiring creativity and sparking curiosity. We design and curate world-class toys and games, while providing an extraordinary customer experience. Whether you're shopping for Christmas, Hanukkah, or a special birthday, we have the toys and games that will make a difference in a child's life..</p>
-            </div>
-        </div>
+        </Container>
 
     );
 };

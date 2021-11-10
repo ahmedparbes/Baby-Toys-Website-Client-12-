@@ -1,70 +1,27 @@
-.half-info{
-    margin-bottom: 40px;
-    background-color: brown;
-    color: white;
-    height: 375px;
-}
-.half-info h2 , p{
-    margin-left: 20px;
-}
-.half-info h2{
-    margin-top: 7px;
-}
-.service-image img{
-    /* margin-top: 48px; */
-    width: 540px;
-    height: 375px;
-    background-color: brown;
+.all-services {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: rgba(245, 245, 245, 0.4);
+
 }
 
-.banner{
-    display: flex;
-    width: 100%;
-    margin-bottom: 40px;
+.card-img{
+    width: 190px;
+    border-radius: 50% 50% 50% 50%;
+    
 }
 
-@media only screen and (max-width: 688px) {
-
-
-
-
-    .banner{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-        margin-bottom: 40px;
-    }
-    .service-image img{
-        /* margin-top: 48px; */
-        width: 100%;
-        height: 100%;
-    }
- 
- 
-  }
- 
- 
- 
- 
- 
- 
- 
-  @media only screen and (min-width:689px) and (max-width: 1200px){
- 
- 
-    .all-data {
- 
- 
-      display: grid;
- 
- 
-      grid-template-columns: repeat(2, 1fr);
- 
- 
-    }
- 
- 
- }
- 
- 
- 
+.button-grp{
+    --e-global-color-primary: #6EC1E4;
+    --e-global-color-secondary: #54595F;
+    --e-global-color-text: #7A7A7A;
+    --e-global-color-accent: #61CE70;
+    --e-global-typography-primary-font-family: "Roboto";
+    --e-global-typography-primary-font-weight: 600;
+    --e-global-typography-secondary-font-family: "Roboto Slab";
+    --e-global-typography-secondary-font-weight: 400;
+    --e-global-typography-text-font-family: "Roboto";
+    --e-global-typography-text-font-weight: 400;
+    --e-global-typography-accent-font-family: "Roboto";
+    --e-global-typography-accent-font-weight: 500;
+}
