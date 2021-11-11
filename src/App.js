@@ -22,6 +22,7 @@ import BookOrder from './OrderManagment/BookOrder/BookOrder';
 import BuyOrder from './OrderManagment/BuyOrder/BuyOrder';
 import PrivateRoute from './Private/PrivateRoute';
 import OrderStatusUpdate from './OrderManagment/OrderStatusUpdate/OrderStatusUpdate';
+import MakeAdmin from './DashBoard/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
 
             <Route path="/shop">
               <Service></Service>
+            </Route>
+            <Route path="/makeAdmin">
+              <MakeAdmin></MakeAdmin>
             </Route>
 
             <PrivateRoute path="/rate">

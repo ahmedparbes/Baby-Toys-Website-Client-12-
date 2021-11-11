@@ -10,7 +10,7 @@ initializeAuthentication()
 
 const Login = () => {
     const [loginData, setLoginData] = useState({});
-    const { user, loginUser, signInWithGoogle, loading, error } = useAuth();
+    const { user, setUser, saveUserInfo, loginUser, signInWithGoogle, loading, error } = useAuth();
 
     const location = useLocation();
     const history = useHistory();
@@ -32,6 +32,8 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         signInWithGoogle()
             .then(result => {
+                const user = result.user
+                saveUserInfo(user.email, user.displayName, 'PUT')
                 history.push(redirect_uri)
 
             })

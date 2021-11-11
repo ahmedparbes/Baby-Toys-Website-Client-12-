@@ -26,28 +26,6 @@ const useFirebase = () => {
 
     }
 
-    // const handleRegisterUser = (email, password, name) => {
-
-    //     const auth = getAuth();
-    //     createUserWithEmailAndPassword(auth, email, password)
-    //         .then((userCredential) => {
-    //             setUser(userCredential.user)
-    //         })
-    //         .catch((error) => {
-    //             setError(error.message);
-
-    //         });
-    // }
-
-    // const handleLogIn = (email, password) => {
-    //     signInWithEmailAndPassword(auth, email, password)
-    //         .then((userCredential) => {
-    //             setUser(userCredential.user);
-    //         })
-    //         .catch((error) => {
-    //             setError(error.message);
-    //         });
-    // }
     const registerUser = (email, password, name, history) => {
         setLoading(true);
         createUserWithEmailAndPassword(auth, email, password)
@@ -55,6 +33,7 @@ const useFirebase = () => {
                 setError('');
                 const newUser = { email, displayName: name };
                 setUser(newUser);
+                saveUserInfo(email, name, 'POST')
                 // send name to firebase after creation
                 updateProfile(auth.currentUser, {
                     displayName: name
@@ -113,7 +92,27 @@ const useFirebase = () => {
         });
 
         return () => unsubscribe;
-    }, [])
+    }, []);
+
+
+
+    const saveUserInfo = (email, displayName, method) => {
+
+        const user = { email, displayName }
+
+        fetch('http://localhost:5000/user', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+            .then(res => res.json())
+            .then(data => {
+
+            })
+
+    }
 
 
     return {
@@ -121,9 +120,11 @@ const useFirebase = () => {
         signInWithGoogle,
         handleLogOut,
         error,
+        setUser,
         loading,
         registerUser,
-        loginUser
+        loginUser,
+        saveUserInfo
 
     }
 
