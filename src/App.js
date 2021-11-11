@@ -23,6 +23,7 @@ import BuyOrder from './OrderManagment/BuyOrder/BuyOrder';
 import PrivateRoute from './Private/PrivateRoute';
 import OrderStatusUpdate from './OrderManagment/OrderStatusUpdate/OrderStatusUpdate';
 import MakeAdmin from './DashBoard/MakeAdmin/MakeAdmin';
+import AdminRoute from './Private/AdminRoute/AdminRoute';
 
 function App() {
   return (
@@ -50,9 +51,9 @@ function App() {
               <Rating></Rating>
             </PrivateRoute>
 
-            <PrivateRoute path="/add-service">
+            <Route path="/add-service">
               <AddService></AddService>
-            </PrivateRoute>
+            </Route>
 
             <Route path="/register">
               <Register></Register>
