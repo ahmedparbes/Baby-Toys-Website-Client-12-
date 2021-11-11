@@ -8,7 +8,7 @@ const OrderStatusUpdate = () => {
     const history = useHistory()
 
     useEffect(() => {
-        const url = `http://localhost:5000/users/${id}`;
+        const url = `https://calm-shelf-61615.herokuapp.com/users/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setUser(data));
@@ -27,7 +27,7 @@ const OrderStatusUpdate = () => {
         setUser(updatedUser);
     }
     const handleUpdateUser = e => {
-        const url = `http://localhost:5000/users/${id}`;
+        const url = `https://calm-shelf-61615.herokuapp.com/users/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {

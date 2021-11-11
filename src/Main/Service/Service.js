@@ -8,10 +8,11 @@ const Service = () => {
     const [service, setService] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://calm-shelf-61615.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setService(data))
-    }, [])
+    }, []);
+
     return (
         <Container>
             <p className="font" style={{ textAlign: 'center', marginTop: '40px' }}>SHOP JUNO TOYS & GAMES</p>

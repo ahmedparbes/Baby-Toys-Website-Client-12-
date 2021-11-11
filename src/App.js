@@ -22,6 +22,7 @@ import BookOrder from './OrderManagment/BookOrder/BookOrder';
 import BuyOrder from './OrderManagment/BuyOrder/BuyOrder';
 import PrivateRoute from './Private/PrivateRoute';
 import OrderStatusUpdate from './OrderManagment/OrderStatusUpdate/OrderStatusUpdate';
+import AllOrders from './DashBoard/AllOrder/AllOrder'
 import MakeAdmin from './DashBoard/MakeAdmin/MakeAdmin';
 import AdminRoute from './Private/AdminRoute/AdminRoute';
 
@@ -43,17 +44,17 @@ function App() {
             <Route path="/shop">
               <Service></Service>
             </Route>
-            <Route path="/makeAdmin">
+            <AdminRoute path="/makeAdmin">
               <MakeAdmin></MakeAdmin>
-            </Route>
+            </AdminRoute>
 
             <PrivateRoute path="/rate">
               <Rating></Rating>
             </PrivateRoute>
 
-            <Route path="/add-service">
+            <AdminRoute path="/add-service">
               <AddService></AddService>
-            </Route>
+            </AdminRoute>
 
             <Route path="/register">
               <Register></Register>
@@ -74,9 +75,14 @@ function App() {
             <PrivateRoute path="/buy/:id" >
               <BookOrder></BookOrder>
             </PrivateRoute>
-            <PrivateRoute path="/update/:id" >
+
+            <AdminRoute path="/update/:id" >
               <OrderStatusUpdate></OrderStatusUpdate>
-            </PrivateRoute>
+            </AdminRoute>
+
+            <AdminRoute path="/allOrders" >
+              <AllOrders></AllOrders>
+            </AdminRoute>
 
             <PrivateRoute path="/dashboard" >
               <DashBoardHome></DashBoardHome>

@@ -14,7 +14,7 @@ const Rating = () => {
 
         const rating = { name: na_me, rate: ra_te }
 
-        fetch('http://localhost:5000/rating', {
+        fetch('https://calm-shelf-61615.herokuapp.com/rating', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -17,7 +17,7 @@ const AddService = () => {
         const pri_ce = priceRef.current.value;
         const newService = { name: name, description: des, price: pri_ce, img: imgs };
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://calm-shelf-61615.herokuapp.com/services', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

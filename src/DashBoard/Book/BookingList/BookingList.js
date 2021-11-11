@@ -13,7 +13,7 @@ const BookingList = () => {
     const [order, setOrder] = useState([])
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://calm-shelf-61615.herokuapp.com/users')
             .then(res => res.json())
             .then(data => {
                 const remain = data.filter(u => u.email == user.email);
@@ -23,7 +23,7 @@ const BookingList = () => {
     }, []);
 
     const cancelOrder = id => {
-        const url = `http://localhost:5000/users/${id}`
+        const url = `https://calm-shelf-61615.herokuapp.com/users/${id}`
         fetch(url, {
             method: "DELETE"
         })
@@ -40,6 +40,7 @@ const BookingList = () => {
     }
     return (
         <div>
+            <h2 style={{ textAlign: 'center', marginTop: '40px', marginBottom: '50px' }} className='font'>Your All Orders Summary</h2>
             {
                 order.map(o => <Container>
                     <div className="table">

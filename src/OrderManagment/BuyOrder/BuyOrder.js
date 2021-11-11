@@ -11,7 +11,7 @@ const BuyOrder = () => {
     const [order, setOrder] = useState({});
 
     useEffect(() => {
-        const url = `http://localhost:5000/services/${id}`
+        const url = `https://calm-shelf-61615.herokuapp.com/services/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setOrder(data))

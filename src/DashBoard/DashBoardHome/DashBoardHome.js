@@ -14,12 +14,11 @@ const DashBoardHome = () => {
                         <li><Link to="/"><i class="fas fa-home"></i>Home</Link></li>
                         <li><Link to="/my-orders"><i class="fas fa-user"></i> Your Order</Link></li>
 
-                        {
-                            admin && <div>
-                                <li><Link to="/makeAdmin"><i class="fas fa-user-lock"></i> Make Admin</Link></li>
-                                <li><Link to="/add-service"><i class="fas fa-plus"></i> Add Product</Link></li>
-                            </div>
-                        }
+
+                        {admin && <div>  <li><Link to="/makeAdmin"><i class="fas fa-user-lock"></i> Make Admin</Link></li>
+                            <li><Link to="/add-service"><i class="fas fa-plus"></i> Add Product</Link></li>
+                            <li><Link to="/allOrders"><i class="fas fa-plus"></i> AllOrders</Link></li>
+                        </div>}
 
                         <li><Link to="/rate"><i class="fas fa-star"></i> Rate us</Link></li>
                         <li><Link to="/pay"><i class="fab fa-paypal"></i> Pay</Link></li>
