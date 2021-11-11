@@ -24,28 +24,7 @@ const DashBoardHome = () => {
                         <li><Link to="/pay"><i class="fab fa-paypal"></i> Pay</Link></li>
                     </ul>
                 </div>
-                <div class="main_content">
-                    <div class="header">Welcome! <span className="text-primary">{user.displayName}</span>. <br />  Have a nice day.</div>
-                    <div className="font admin-panel">
 
-                        {
-
-                            // users.map(singleUser => <Container>
-                            //     <div className="user-section">
-                            //         <div className="half-img">
-                            //             <img src={singleUser.img} alt="" />
-                            //         </div>
-                            //         <div className="half-width">
-
-                            //             <h6>{singleUser.description}</h6>
-                            //             <button onClick={() => handleDelete(singleUser._id)} className="cancel-btn">Cancel</button>
-                            //         </div>
-                            //     </div>
-                            // </Container>)
-                        }
-                    </div>
-
-                </div>
             </div>
         </Container>
     );

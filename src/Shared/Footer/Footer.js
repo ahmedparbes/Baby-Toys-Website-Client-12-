@@ -21,7 +21,7 @@ const Footer = () => {
                                 </div>
                                 <div className="col-md-6 px-4">
                                     <h6> About Company</h6>
-                                    <p>But horizontal lines can only be a full pixel high.</p>
+                                    <p style={{ marginRight: '50px' }}>But horizontal lines can only be a full pixel high.</p>
                                     <a href="#" className="btn-footer"> More Info </a><br />
                                     <a href="#" className="btn-footer"> Contact Us</a>
                                 </div>
