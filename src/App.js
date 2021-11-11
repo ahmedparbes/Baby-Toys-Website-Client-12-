@@ -76,9 +76,9 @@ function App() {
               <BookOrder></BookOrder>
             </PrivateRoute>
 
-            <AdminRoute path="/update/:id" >
+            <Route path="/update/:id" >
               <OrderStatusUpdate></OrderStatusUpdate>
-            </AdminRoute>
+            </Route>
 
             <AdminRoute path="/allOrders" >
               <AllOrders></AllOrders>

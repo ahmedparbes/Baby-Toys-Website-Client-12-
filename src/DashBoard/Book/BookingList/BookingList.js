@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
 import React from 'react';
-import { Link } from 'react-router-dom';
 import useAuth from "../../../Context/AuthProvider/useAuth/useAuth";
 import './BookingList.css'
 import { Container } from "react-bootstrap";
-import Button from 'react-bootstrap/Button'
 
 const BookingList = () => {
 
@@ -23,21 +21,25 @@ const BookingList = () => {
     }, []);
 
     const cancelOrder = id => {
-        const url = `https://calm-shelf-61615.herokuapp.com/users/${id}`
-        fetch(url, {
-            method: "DELETE"
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-
-                    alert('Order cancel successfully')
-                    const remain = order.filter(o => o._id !== id)
-                    setOrder(remain);
-                }
-
+        const proceed = window.confirm('Are you sure, you want to delete?');
+        if (proceed) {
+            const url = `https://calm-shelf-61615.herokuapp.com/users/${id}`
+            fetch(url, {
+                method: "DELETE"
             })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount) {
+
+                        alert('Order cancel successfully')
+                        const remain = order.filter(o => o._id !== id)
+                        setOrder(remain);
+                    }
+
+                })
+        }
     }
+
     return (
         <div>
             <h2 style={{ textAlign: 'center', marginTop: '40px', marginBottom: '50px' }} className='font'>Your All Orders Summary</h2>
@@ -60,7 +62,7 @@ const BookingList = () => {
                                 <td>{o.email}</td>
                                 <td>{o.product}</td>
                                 <td><button onClick={() => cancelOrder(o._id)}><i className="fas fa-trash-alt"> cancel order</i></button></td>
-                                <td> <Button variant="danger"><Link style={{ textDecoration: 'none', color: "white" }} to={`update/${o._id}`}>{o.status}</Link></Button></td>
+                                <td>{o.status}</td>
                             </tr>
 
                         </table>

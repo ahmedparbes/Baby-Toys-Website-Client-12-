@@ -41,7 +41,6 @@ const OrderStatusUpdate = () => {
                     alert('Update Successful');
                     setUser({});
                     e.target.reset();
-                    history.push('/my-orders')
 
 
                 }
@@ -59,7 +58,6 @@ const OrderStatusUpdate = () => {
                     <input type="text" onChange={handleStatusChange} defaultValue={user.status || ''} />
                     <label className="label-text-status"><b>Add a note</b></label>
                     <input type="text" onChange={handleNoteChange} defaultValue={user.note || ''} />
-
                     <input type="submit" value="Update" />
                 </form>
             </div>

@@ -17,7 +17,7 @@ const DashBoardHome = () => {
 
                         {admin && <div>  <li><Link to="/makeAdmin"><i class="fas fa-user-lock"></i> Make Admin</Link></li>
                             <li><Link to="/add-service"><i class="fas fa-plus"></i> Add Product</Link></li>
-                            <li><Link to="/allOrders"><i class="fas fa-plus"></i> AllOrders</Link></li>
+                            <li><Link to="/allOrders"><i class="fab fa-product-hunt"></i> AllOrders</Link></li>
                         </div>}
 
                         <li><Link to="/rate"><i class="fas fa-star"></i> Rate us</Link></li>
