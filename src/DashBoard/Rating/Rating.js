@@ -5,14 +5,16 @@ const Rating = () => {
 
     const nameRef = useRef();
     const desRef = useRef();
+    const starRef = useRef()
 
 
     const handlehtmlForm = e => {
 
         const na_me = nameRef.current.value;
         const ra_te = desRef.current.value;
+        const st_ar = starRef.current.value;
 
-        const rating = { name: na_me, rate: ra_te }
+        const rating = { name: na_me, rate: ra_te, star: st_ar }
 
         fetch('https://calm-shelf-61615.herokuapp.com/rating', {
             method: 'POST',
@@ -40,6 +42,9 @@ const Rating = () => {
                     <input ref={nameRef} type="text" required placeholder="Full name" />
                     <legend className="legend-text">Your Feedback</legend>
                     <textArea ref={desRef} required type="text" id="lname" name="lastname" />
+                    <br />
+                    <legend className="legend-text">Give Us a Star</legend>
+                    <textArea ref={starRef} required type="text" id="lname" name="lastname" placeholder="Between 0 to 5" />
                     <input type="submit" value="Submit Feedback" />
                 </form>
             </div>
