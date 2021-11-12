@@ -54,21 +54,30 @@ function HomeDashboard(props) {
             <Divider />
             <Link style={{ textDecoration: 'none' }} to="/"><Button variant="text">Home</Button></Link>
             <br />
-            <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button style={{ textDecoration: 'none' }} variant="text">DashBoard</Button></Link>
-            <br />
-            <Link style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button variant="text">Make Admin</Button></Link>
-            <br />
-            <Link style={{ textDecoration: 'none' }} to={`${url}/allOrders`}><Button variant="text">All Orders</Button></Link>
-            <Link style={{ textDecoration: 'none' }} to={`${url}/add-service`}><Button variant="text">Add Service</Button></Link>
-            <br />
 
-            <Link style={{ textDecoration: 'none' }} to={`${url}/manageProduct`}><Button variant="text">Manage All Products</Button></Link>
-            <Link style={{ textDecoration: 'none' }} to={`${url}/rate`}><Button variant="text">Rate us</Button></Link>
-            <br />
-            <Link style={{ textDecoration: 'none' }} to={`${url}/pay`}><Button variant="text">Pay Now</Button></Link>
-            <br />
-            <Link style={{ textDecoration: 'none' }} to={`${url}/my-orders`}><Button variant="text">My Orders</Button></Link>
-            <br />
+            {
+                admin ? <Box>
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button variant="text">Make Admin</Button></Link>
+                    <br />
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/allOrders`}><Button variant="text">All Orders</Button></Link>
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/add-service`}><Button variant="text">Add Service</Button></Link>
+                    <br />
+
+                    <Link style={{ textDecoration: 'none' }} to={`${url}/manageProduct`}><Button variant="text">Manage All Products</Button></Link>
+                </Box> :
+                    <Box>
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/rate`}><Button variant="text">Rate us</Button></Link>
+                        <br />
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/pay`}><Button variant="text">Pay Now</Button></Link>
+                        <br />
+                        <Link style={{ textDecoration: 'none' }} to={`${url}/my-orders`}><Button variant="text">My Orders</Button></Link>
+                        <br />
+
+                        <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button style={{ textDecoration: 'none' }} variant="text">DashBoard</Button></Link>
+                        <br />
+                    </Box>
+            }
+
 
             <Divider />
             <Button style={{ marginLeft: '20px', marginTop: '20px' }} onClick={handleLogOut} variant="contained">Logout</Button>
