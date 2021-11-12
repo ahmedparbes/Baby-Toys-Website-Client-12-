@@ -27,6 +27,7 @@ import MakeAdmin from './DashBoard/MakeAdmin/MakeAdmin';
 import AdminRoute from './Private/AdminRoute/AdminRoute';
 import About from './Pages/About/About';
 import AllService from './Pages/About/AllService/AllService';
+import ManageProduct from './OrderManagment/ManageProduct/ManageProduct';
 
 function App() {
   return (
@@ -95,6 +96,9 @@ function App() {
             </Route>
             <Route path="/allProducts" >
               <AllService></AllService>
+            </Route>
+            <Route path="/manageProduct" >
+              <ManageProduct></ManageProduct>
             </Route>
 
 

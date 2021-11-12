@@ -18,7 +18,7 @@ const Header = () => {
                     <Navbar.Collapse className="justify-content-end">
                         <Nav className="px-7 nav-link">
                             <Link to="/">Home</Link>
-                            <Link to="/shop">Shop</Link>
+                            <Link to="/allProducts">Explore</Link>
                             <Link to="/about">About</Link>
                             {
                                 !user.email && <div className="py-1 my-1">
