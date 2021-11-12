@@ -70,6 +70,7 @@ const BookingList = () => {
                 </Container>)
             }
         </div>
+        // https://calm-shelf-61615.herokuapp.com/users/${id}
     );
 };
 

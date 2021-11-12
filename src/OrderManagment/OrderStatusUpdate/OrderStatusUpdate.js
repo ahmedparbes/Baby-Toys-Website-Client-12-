@@ -1,3 +1,5 @@
+// https://calm-shelf-61615.herokuapp.com/users/
+
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
@@ -5,7 +7,6 @@ import { useHistory, useParams } from 'react-router';
 const OrderStatusUpdate = () => {
     const [user, setUser] = useState({});
     const { id } = useParams();
-    const history = useHistory()
 
     useEffect(() => {
         const url = `https://calm-shelf-61615.herokuapp.com/users/${id}`;
@@ -40,6 +41,7 @@ const OrderStatusUpdate = () => {
                 if (data.modifiedCount > 0) {
                     alert('Update Successful');
                     setUser({});
+
                     e.target.reset();
 
 
@@ -58,6 +60,7 @@ const OrderStatusUpdate = () => {
                     <input type="text" onChange={handleStatusChange} defaultValue={user.status || ''} />
                     <label className="label-text-status"><b>Add a note</b></label>
                     <input type="text" onChange={handleNoteChange} defaultValue={user.note || ''} />
+
                     <input type="submit" value="Update" />
                 </form>
             </div>
