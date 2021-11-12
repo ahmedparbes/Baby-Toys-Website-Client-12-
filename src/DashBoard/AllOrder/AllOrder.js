@@ -58,19 +58,15 @@ const AllOrder = () => {
                                 key={order._id}
                                 className="font" id="customers" >
                                 <tr>
-                                    {/* <th>Name</th> */}
                                     <th>Email</th>
                                     <th>Product ID</th>
-                                    <th>Product Name</th>
                                     <th>Status</th>
                                     <th>Action</th>
 
                                 </tr>
                                 <tr>
-                                    {/* <td>{user.name}</td> */}
                                     <td>{order.email}</td>
                                     <td>{order._id}</td>
-                                    <td>{order.productName}</td>
                                     <td><Link to={`/update/${order._id}`}><button>{order.status}</button></Link></td>
                                     <td><button onClick={() => cancelOrder(order._id)}><i className="fas fa-trash-alt"> cancel order</i></button></td>
                                 </tr>
