@@ -5,7 +5,7 @@ import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
 import './DashBoardHome.css'
 
 const DashBoardHome = () => {
-    const { user, admin } = useAuth()
+    const { user, admin, handleLogOut } = useAuth()
     return (
         <Container>
             <div class="wrapper font">
@@ -22,6 +22,10 @@ const DashBoardHome = () => {
 
                         <li><Link to="/rate"><i class="fas fa-star"></i> Rate us</Link></li>
                         <li><Link to="/pay"><i class="fab fa-paypal"></i> Pay</Link></li>
+                        {
+                            user.email &&
+                            <button style={{ backgroundColor: 'purple', color: 'white', marginRight: '10px' }} className="font" onClick={handleLogOut} ><i className="fa fa-sign-out" aria-hidden="true"><span className="font mx-1"> Logout</span></i></button>
+                        }
                     </ul>
                 </div>
 
