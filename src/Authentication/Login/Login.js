@@ -5,6 +5,8 @@ import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
 import initializeAuthentication from '../../Firebase/Firebase.init';
 import Button from '@restart/ui/esm/Button';
 import { Alert, CircularProgress } from '@mui/material';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 
 initializeAuthentication()
 
@@ -40,8 +42,10 @@ const Login = () => {
     }
 
     return (
-        <Container>
-            <div className="font">
+
+        <div className="font">
+            <Header></Header>
+            <Container>
                 <form onSubmit={handleLoginSubmit}>
                     <label htmlFor="email"><b>Email</b></label>
                     <input onBlur={handleOnChange} type="text" placeholder="Enter Email" name="email" id="email" required />
@@ -64,8 +68,10 @@ const Login = () => {
                 <div style={{ textAlign: 'center', alignItems: 'center' }} >
                     <button className="btn-primary font" onClick={handleGoogleSignIn} ><i className="fab fa-google">    <span className="font mx-3">Log in Using Google</span></i></button>
                 </div>
-            </div >
-        </Container >
+            </Container >
+            <Footer></Footer>
+        </div >
+
     );
 };
 

@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
 import './Register.css'
+import Header from '../../Shared/Header/Header'
+import Footer from '../../Shared/Footer/Footer'
 
 const Register = () => {
     const [loginData, setLoginData] = useState({});
@@ -24,6 +26,7 @@ const Register = () => {
     return (
         // {!loading && <form onSubmit={handleLoginSubmit}>
         <div className="font">
+            <Header></Header>
             <form onSubmit={handleLoginSubmit} >
                 <div class="container">
                     <h1>Register</h1>
@@ -52,6 +55,7 @@ const Register = () => {
 
                 </div>
             </form>
+            <Footer></Footer>
         </div>
     );
 };

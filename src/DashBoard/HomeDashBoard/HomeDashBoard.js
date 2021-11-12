@@ -32,12 +32,13 @@ import BookingList from '../Book/BookingList/BookingList';
 import Rating from '../../DashBoard/Rating/Rating'
 import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
 import Home from '../../Main/Home/Home';
+import ManageProduct from '../../OrderManagment/ManageProduct/ManageProduct';
 
 const drawerWidth = 240;
 
 function HomeDashboard(props) {
 
-    const { user } = useAuth()
+    const { user, admin, handleLogOut } = useAuth()
 
     let { path, url } = useRouteMatch();
     const { window } = props;
@@ -56,16 +57,21 @@ function HomeDashboard(props) {
             <Link style={{ textDecoration: 'none' }} to={`${url}`}><Button style={{ textDecoration: 'none' }} variant="text">DashBoard</Button></Link>
             <br />
             <Link style={{ textDecoration: 'none' }} to={`${url}/makeAdmin`}><Button variant="text">Make Admin</Button></Link>
+            <br />
             <Link style={{ textDecoration: 'none' }} to={`${url}/allOrders`}><Button variant="text">All Orders</Button></Link>
             <Link style={{ textDecoration: 'none' }} to={`${url}/add-service`}><Button variant="text">Add Service</Button></Link>
             <br />
+
+            <Link style={{ textDecoration: 'none' }} to={`${url}/manageProduct`}><Button variant="text">Manage All Products</Button></Link>
             <Link style={{ textDecoration: 'none' }} to={`${url}/rate`}><Button variant="text">Rate us</Button></Link>
             <br />
             <Link style={{ textDecoration: 'none' }} to={`${url}/pay`}><Button variant="text">Pay Now</Button></Link>
             <br />
             <Link style={{ textDecoration: 'none' }} to={`${url}/my-orders`}><Button variant="text">My Orders</Button></Link>
+            <br />
 
             <Divider />
+            <Button style={{ marginLeft: '20px', marginTop: '20px' }} onClick={handleLogOut} variant="contained">Logout</Button>
 
         </div>
     );
@@ -138,11 +144,11 @@ function HomeDashboard(props) {
                     <Route exact path={path}>
                         <h3>Hello, <span style={{ color: 'violet' }}> {user.displayName}</span> </h3>
                     </Route>
+                    <Route exact path={`${path}/`}>
+                        <Home></Home>
+                    </Route>
                     <Route path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
-                    <Route path={`${path}/`}>
-                        <Home></Home>
                     </Route>
                     <Route path={`${path}/allOrders`}>
                         <AllOrder></AllOrder>
@@ -158,6 +164,9 @@ function HomeDashboard(props) {
                     </Route>
                     <Route path={`${path}/my-orders`}>
                         <BookingList></BookingList>
+                    </Route>
+                    <Route path={`${path}/manageProduct`}>
+                        <ManageProduct></ManageProduct>
                     </Route>
                 </Switch>
             </Box>
