@@ -44,7 +44,7 @@ const Rating = () => {
                     <textArea ref={desRef} required type="text" id="lname" name="lastname" />
                     <br />
                     <legend className="legend-text">Give Us a Star</legend>
-                    <textArea ref={starRef} required type="text" id="lname" name="lastname" placeholder="Between 0 to 5" />
+                    <input ref={starRef} type="number" id="quantity" name="quantity" min="1" max="5" />
                     <input type="submit" value="Submit Feedback" />
                 </form>
             </div>
