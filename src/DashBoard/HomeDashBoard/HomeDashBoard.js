@@ -52,7 +52,7 @@ function HomeDashboard(props) {
         <div>
             <Toolbar />
             <Divider />
-            <Link style={{ textDecoration: 'none', padding: '6px' }} to="/"><Button variant="text">Home</Button></Link>
+            <Link style={{ textDecoration: 'none', padding: '6px' }} to="/"><Button variant="text">HomePage</Button></Link>
             <br />
 
             {
@@ -66,14 +66,16 @@ function HomeDashboard(props) {
                     <Link style={{ textDecoration: 'none', padding: '6px' }} to={`${url}/manageProduct`}><Button variant="text">Manage All Products</Button></Link>
                 </Box> :
                     <Box>
+                        <Link style={{ textDecoration: 'none', padding: '6px' }} to={`${url}`}><Button style={{ textDecoration: 'none' }} variant="text">DashBoard</Button></Link>
+                        <br />
                         <Link style={{ textDecoration: 'none', padding: '6px' }} to={`${url}/rate`}><Button variant="text">Rate us</Button></Link>
                         <br />
+
+
                         <Link style={{ textDecoration: 'none', padding: '6px' }} to={`${url}/pay`}><Button variant="text">Pay Now</Button></Link>
+
                         <br />
                         <Link style={{ textDecoration: 'none', padding: '6px' }} to={`${url}/my-orders`}><Button variant="text">My Orders</Button></Link>
-                        <br />
-
-                        <Link style={{ textDecoration: 'none', padding: '6px' }} to={`${url}`}><Button style={{ textDecoration: 'none' }} variant="text">DashBoard</Button></Link>
                         <br />
                     </Box>
             }
