@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
 import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import './BookOrder.css';
 
 
@@ -61,25 +63,29 @@ const BookOrder = () => {
 
 
     return (
-        <Container>
-            <div className="font book-order">
-                <h2 className="text-primary order-title">Fill this form to procced.</h2>
-                <form onSubmit={handlehtmlForm}>
-                    <legend className="legend-text">Your Name</legend>
-                    <input ref={nameRef} type="text" required placeholder="Full name" />
-                    <legend className="legend-text">User Email</legend>
-                    <input ref={emailRef} type="text" required placeholder="Type email or username" value={user.email} />
-                    <legend className="legend-text">Product Name</legend>
-                    <input ref={productNameRef} required type="text" id="lname" name="lastname" placeholder="" value={order.name} />
-                    <legend className="legend-text">Description</legend>
-                    <input className="description" ref={productDesRef} required type="text" id="lname" name="lastname" placeholder="" value={order.description} />
-                    <legend className="legend-text">Default Status</legend>
-                    <input className="description" ref={statusRef} required type="text" id="lname" name="lastname" placeholder="" value="Pending" />
-                    <input className="description" ref={noteRef} required type="text" id="lname" name="lastname" placeholder="Add a note" />
-                    <input type="submit" value="Place Order" />
-                </form>
-            </div>
-        </Container>
+        <div>
+            <Header></Header>
+            <Container>
+                <div className="font book-order">
+                    <h2 className="text-primary order-title">Fill this form to procced.</h2>
+                    <form onSubmit={handlehtmlForm}>
+                        <legend className="legend-text">Your Name</legend>
+                        <input ref={nameRef} type="text" required placeholder="Full name" />
+                        <legend className="legend-text">User Email</legend>
+                        <input ref={emailRef} type="text" required placeholder="Type email or username" value={user.email} />
+                        <legend className="legend-text">Product Name</legend>
+                        <input ref={productNameRef} required type="text" id="lname" name="lastname" placeholder="" value={order.name} />
+                        <legend className="legend-text">Description</legend>
+                        <input className="description" ref={productDesRef} required type="text" id="lname" name="lastname" placeholder="" value={order.description} />
+                        <legend className="legend-text">Default Status</legend>
+                        <input className="description" ref={statusRef} required type="text" id="lname" name="lastname" placeholder="" value="Pending" />
+                        <input className="description" ref={noteRef} required type="text" id="lname" name="lastname" placeholder="Add a note" />
+                        <input type="submit" value="Place Order" />
+                    </form>
+                </div>
+            </Container>
+            <Footer></Footer>
+        </div>
     );
 };
 

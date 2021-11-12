@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 import './BuyOrder.css'
 
 const BuyOrder = () => {
@@ -18,29 +20,33 @@ const BuyOrder = () => {
     }, []);
 
     return (
-        <Container>
-            <h2 style={{ marginTop: '50px' }} className=" font order-title">Shop</h2>
-            <div className="font buy-page">
-                <div className="buy-half-image">
-                    <img src={order.img} alt="" />
-                </div>
-                <div className="buy-half-page">
-                    <h1>{order.name}</h1>
-                    <h4 style={{ color: 'blue' }}>{order.price}</h4>
-                    <br />
-                    <p>{order.description}</p>
-                    <div>
-                        <div className="second-buy-element">
-                            <Link to={`/buy/${order._id}`}>
-                                <button style={{ padding: '10px 20px', backgroundColor: 'purple', color: 'white' }} >Buy Now</button>
-                            </Link>
-                        </div>
+        <div>
+            <Header></Header>
+            <Container>
+                <h2 style={{ marginTop: '50px' }} className=" font order-title">Shop</h2>
+                <div className="font buy-page">
+                    <div className="buy-half-image">
+                        <img src={order.img} alt="" />
+                    </div>
+                    <div className="buy-half-page">
+                        <h1>{order.name}</h1>
+                        <h4 style={{ color: 'blue' }}>{order.price}</h4>
+                        <br />
+                        <p>{order.description}</p>
                         <div>
+                            <div className="second-buy-element">
+                                <Link to={`/buy/${order._id}`}>
+                                    <button style={{ padding: '10px 20px', backgroundColor: 'purple', color: 'white' }} >Buy Now</button>
+                                </Link>
+                            </div>
+                            <div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </Container>
+            </Container>
+            <Footer></Footer>
+        </div>
     );
 };
 
