@@ -1,10 +1,17 @@
-# Getting Started with Create React App
+# Getting Started with Fun corp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://jerins-parlour-aa7be.web.app/).
 
 ## Available Scripts
+ This Project is about Kid Shoping. You can buy any kind kids product whatever you want. so if you want to buy a kid product lets visit our site.
 
 In the project directory, you can run:
+
+- Best Kids products.
+- Order a product or more.
+- Perfect DashBoard
+- Manage your all orders
+- Safe Browse.
 
 ### `yarn start`
 
