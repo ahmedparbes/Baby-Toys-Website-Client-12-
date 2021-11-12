@@ -40,6 +40,12 @@ margin-left: 40px;
         justify-content: center;
         align-items: center;
     }
+
+    
+    
+    .banner-Under{
+        margin-top: 70px;
+    }
     .banner-Under .image-one{
         margin-bottom: 150px;
     }

@@ -23,7 +23,7 @@ const Customer = () => {
                 {
                     service.map(s => <Card className="border-0" style={{ width: '13rem', backgroundColor: '#00000000' }}>
                         <Card.Img className="card-img" variant="top" src={s.img} />
-                        <Button className="button-grp">{s.age}</Button>{' '}
+                        <button className="child-button">{s.age}</button>
                     </Card>)
                 }
 

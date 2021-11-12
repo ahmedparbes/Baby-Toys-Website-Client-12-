@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Service.css'
+import './AllService.css'
 
-const Service = () => {
+const AllService = () => {
 
     const [service, setService] = useState([]);
 
@@ -20,7 +20,7 @@ const Service = () => {
             <div className='all-service font'>
 
                 {
-                    service.slice(0, 6).map(s => <div className="single-service"
+                    service.map(s => <div className="single-service"
                         key={s.id}
                     >
                         <Link to={`/book/${s._id}`}>
@@ -33,9 +33,9 @@ const Service = () => {
                 }
 
             </div>
-            <Link to="/allProducts"> <button className="explore-btn font">Explore more..</button></Link>
+
         </Container>
     );
 };
 
-export default Service;
+export default AllService;

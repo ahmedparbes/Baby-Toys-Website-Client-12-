@@ -19,11 +19,11 @@ const Header = () => {
                         <Nav className="px-7 nav-link">
                             <Link to="/">Home</Link>
                             <Link to="/shop">Shop</Link>
-                            <Link to="/contact">Contact</Link>
+                            <Link to="/about">About</Link>
                             {
                                 !user.email && <div className="py-1 my-1">
                                     <button className="btn-danger login-btn ">
-                                        <Link to="/register"><i className="fas fa-sign-in-alt"><span className="font login-btn"> Register</span></i></Link></button>
+                                        <Link to="/register"><i className=" login-btn fas fa-sign-in-alt"><span className="font login-btn"> Register</span></i></Link></button>
                                 </div>
                             }
                             {

@@ -43,12 +43,7 @@ background-color: rgb(134, 135, 136);
 
 .explore-btn{
   margin-bottom: 60px;
-  border-radius: 10px;
-  
-  background: #ff00cc;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    background-color: #F63E7B;
     color: white;
     margin-left: 480px;
     padding: 10px 20px;
@@ -73,7 +68,6 @@ background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, F
         margin-bottom: 20px;
      
     }
-
 
     .single-service img{
         width: 80%;

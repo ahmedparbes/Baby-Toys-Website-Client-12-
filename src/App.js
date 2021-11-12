@@ -25,6 +25,8 @@ import OrderStatusUpdate from './OrderManagment/OrderStatusUpdate/OrderStatusUpd
 import AllOrders from './DashBoard/AllOrder/AllOrder'
 import MakeAdmin from './DashBoard/MakeAdmin/MakeAdmin';
 import AdminRoute from './Private/AdminRoute/AdminRoute';
+import About from './Pages/About/About';
+import AllService from './Pages/About/AllService/AllService';
 
 function App() {
   return (
@@ -87,6 +89,13 @@ function App() {
             <PrivateRoute path="/dashboard" >
               <DashBoardHome></DashBoardHome>
             </PrivateRoute>
+
+            <Route path="/about" >
+              <About></About>
+            </Route>
+            <Route path="/allProducts" >
+              <AllService></AllService>
+            </Route>
 
 
           </Switch>
