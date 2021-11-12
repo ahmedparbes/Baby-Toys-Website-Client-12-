@@ -7,10 +7,7 @@ import {
   Route,
 } from 'react-router-dom';
 import Home from './Main/Home/Home';
-import Header from './Shared/Header/Header';
-import Footer from './Shared/Footer/Footer';
 import AuthProvider from './Context/AuthProvider/AuthProvider';
-import DashBoardHome from './DashBoard/DashBoardHome/DashBoardHome';
 import Payment from './DashBoard/Payment/Payment';
 import Rating from './DashBoard/Rating/Rating';
 import Service from './Main/Service/Service';
@@ -28,13 +25,14 @@ import AdminRoute from './Private/AdminRoute/AdminRoute';
 import About from './Pages/About/About';
 import AllService from './Pages/About/AllService/AllService';
 import ManageProduct from './OrderManagment/ManageProduct/ManageProduct';
+import HomeDashboard from './DashBoard/HomeDashBoard/HomeDashBoard';
 
 function App() {
   return (
     <div>
       <AuthProvider>
         <BrowserRouter>
-          <Header></Header>
+
           <Switch>
             <Route exact path="/">
               <Home></Home>
@@ -88,7 +86,7 @@ function App() {
             </AdminRoute>
 
             <PrivateRoute path="/dashboard" >
-              <DashBoardHome></DashBoardHome>
+              <HomeDashboard></HomeDashboard>
             </PrivateRoute>
 
             <Route path="/about" >
@@ -97,14 +95,14 @@ function App() {
             <Route path="/allProducts" >
               <AllService></AllService>
             </Route>
-            <Route path="/manageProduct" >
+            <AdminRoute path="/manageProduct" >
               <ManageProduct></ManageProduct>
-            </Route>
+            </AdminRoute>
 
 
           </Switch>
         </BrowserRouter>
-        <Footer></Footer>
+
 
       </AuthProvider>
     </div >
