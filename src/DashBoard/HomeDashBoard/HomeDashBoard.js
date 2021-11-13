@@ -33,6 +33,7 @@ import Rating from '../../DashBoard/Rating/Rating'
 import useAuth from '../../Context/AuthProvider/useAuth/useAuth';
 import Home from '../../Main/Home/Home';
 import ManageProduct from '../../OrderManagment/ManageProduct/ManageProduct';
+import AdminRoute from '../../Private/AdminRoute/AdminRoute';
 
 const drawerWidth = 240;
 
@@ -158,27 +159,27 @@ function HomeDashboard(props) {
                     <Route exact path={`${path}/`}>
                         <Home></Home>
                     </Route>
-                    <Route path={`${path}/makeAdmin`}>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
-                    </Route>
-                    <Route path={`${path}/allOrders`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/allOrders`}>
                         <AllOrder></AllOrder>
-                    </Route>
+                    </AdminRoute>
                     <Route path={`${path}/rate`}>
                         <Rating></Rating>
                     </Route>
                     <Route path={`${path}/pay`}>
                         <Payment></Payment>
                     </Route>
-                    <Route path={`${path}/add-service`}>
+                    <AdminRoute path={`${path}/add-service`}>
                         <AddService></AddService>
-                    </Route>
+                    </AdminRoute>
                     <Route path={`${path}/my-orders`}>
                         <BookingList></BookingList>
                     </Route>
-                    <Route path={`${path}/manageProduct`}>
+                    <AdminRoute path={`${path}/manageProduct`}>
                         <ManageProduct></ManageProduct>
-                    </Route>
+                    </AdminRoute>
                 </Switch>
             </Box>
         </Box>

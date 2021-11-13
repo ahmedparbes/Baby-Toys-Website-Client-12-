@@ -26,6 +26,7 @@ import About from './Pages/About/About';
 import AllService from './Pages/About/AllService/AllService';
 import ManageProduct from './OrderManagment/ManageProduct/ManageProduct';
 import HomeDashboard from './DashBoard/HomeDashBoard/HomeDashBoard';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -98,7 +99,9 @@ function App() {
             <AdminRoute path="/manageProduct" >
               <ManageProduct></ManageProduct>
             </AdminRoute>
-
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
 
           </Switch>
         </BrowserRouter>

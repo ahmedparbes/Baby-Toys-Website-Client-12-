@@ -3,6 +3,8 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { useHistory, useParams } from 'react-router';
+import Footer from '../../Shared/Footer/Footer';
+import Header from '../../Shared/Header/Header';
 
 const OrderStatusUpdate = () => {
     const [user, setUser] = useState({});
@@ -51,20 +53,24 @@ const OrderStatusUpdate = () => {
     }
 
     return (
-        <Container>
-            <div className="font order-status-handle">
-                <h2 className="order-title">Type <span className="text-primary">Approve</span> for approve this Order</h2>
-                <hr />
-                <form onSubmit={handleUpdateUser}>
-                    <label className="label-text-status"><b>Default Status</b></label>
-                    <input type="text" onChange={handleStatusChange} defaultValue={user.status || ''} />
-                    <label className="label-text-status"><b>Add a note</b></label>
-                    <input type="text" onChange={handleNoteChange} defaultValue={user.note || ''} />
+        <>
+            <Header></Header>
+            <Container>
+                <div className="font order-status-handle">
+                    <h2 className="order-title">Type <span className="text-primary">Approve</span> for approve this Order</h2>
+                    <hr />
+                    <form onSubmit={handleUpdateUser}>
+                        <label className="label-text-status"><b>Default Status</b></label>
+                        <input type="text" onChange={handleStatusChange} defaultValue={user.status || ''} />
+                        <label className="label-text-status"><b>Add a note</b></label>
+                        <input type="text" onChange={handleNoteChange} defaultValue={user.note || ''} />
 
-                    <input type="submit" value="Update" />
-                </form>
-            </div>
-        </Container>
+                        <input type="submit" value="Update" />
+                    </form>
+                </div>
+            </Container>
+            <Footer></Footer>
+        </>
     );
 };
 

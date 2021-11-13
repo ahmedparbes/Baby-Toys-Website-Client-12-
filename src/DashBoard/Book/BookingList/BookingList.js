@@ -3,6 +3,8 @@ import React from 'react';
 import useAuth from "../../../Context/AuthProvider/useAuth/useAuth";
 import './BookingList.css'
 import { Container } from "react-bootstrap";
+import Footer from "../../../Shared/Footer/Footer";
+import Header from "../../../Shared/Header/Header";
 
 const BookingList = () => {
 
@@ -17,7 +19,6 @@ const BookingList = () => {
                 const remain = data.filter(u => u.email == user.email);
                 setOrder(remain)
             })
-
     }, []);
 
     const cancelOrder = id => {
@@ -42,6 +43,7 @@ const BookingList = () => {
 
     return (
         <div>
+
             <h2 style={{ textAlign: 'center', marginTop: '40px', marginBottom: '50px' }} className='font'>Your All Orders Summary</h2>
             {
                 order.map(o => <Container>
@@ -69,6 +71,7 @@ const BookingList = () => {
                     </div>
                 </Container>)
             }
+
         </div>
     );
 };

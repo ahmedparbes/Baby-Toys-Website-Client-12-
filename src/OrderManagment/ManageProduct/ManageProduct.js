@@ -40,11 +40,11 @@ const ManageProduct = () => {
                             <tr>
 
                                 <th>Product Name</th>
-                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
                             <tr>
                                 <td>{o.name}</td>
-                                <td><button onClick={() => cancelOrder(o._id)}><i className="fas fa-trash-alt"> cancel order</i></button></td>
+                                <td><button onClick={() => cancelOrder(o._id)}><i style={{ color: 'red' }} className="fas fa-trash-alt"> Remove Product</i></button></td>
                             </tr>
 
                         </table>
